@@ -310,7 +310,7 @@ jobs:
     docker:
       - image: cimg/base:stable
     steps:
-      - slack/notify
+      - slack/notify:
           event: pass
           channel: cicd-pipelines
           template: success_taged_deployment_1
