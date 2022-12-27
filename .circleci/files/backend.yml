@@ -37,7 +37,7 @@ Resources:
       Tags:
         - Key: Name
           Value: !Sub backend-${ID}
-        - Key: Name
+        - Key: Project
           value: UdaPeople
   InstanceEIP:
     Type: AWS::EC2::EIP
