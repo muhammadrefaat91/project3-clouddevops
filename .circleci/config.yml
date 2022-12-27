@@ -217,6 +217,8 @@ jobs:
       - install_awscli
       - add_ssh_keys:
           fingerprints: ["0d:14:4b:30:37:9e:6b:91:39:8a:e8:71:fe:83:53:7b"]
+      - attach_workspace:
+          at: ~/
       - run:
           name: Run Configure Server Ansible play
           command: |
