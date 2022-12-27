@@ -40,6 +40,6 @@ Resources:
         - Key: Name
           value: UdaPeople
   InstanceEIP:
-    type: AWS::EC2::EIP
+    Type: AWS::EC2::EIP
     Domain: vpc
     InstanceId: !Ref EC2Instance
