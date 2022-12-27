@@ -52,10 +52,10 @@ commands:
               aws s3 rm s3://udapeople-<<parameters.Workflow_ID>> --recursive
 
               # Delete frontend stack
-              aws cloudformation delete-stack --stack-name project3-frontend-<< parameters.Workflow_ID >>
+              aws cloudformation delete-stack --stack-name udapeople-frontend-<< parameters.Workflow_ID >>
 
               # Delete backend stack
-              aws cloudformation delete-stack --stack-name project3-backend-<< parameters.Workflow_ID >>
+              aws cloudformation delete-stack --stack-name udapeople-backend-<< parameters.Workflow_ID >>
 
     revert-migrations:
       description: Revert the last migration if successfully run in the current workflow.
@@ -188,8 +188,8 @@ jobs:
           command: |
             aws cloudformation deploy \
               --template-file .circleci/files/backend.yml \
-              --tags project=project3 \
-              --stack-name "project3-backend-${CIRCLE_WORKFLOW_ID:0:7}" \
+              --tags project=udapeople \
+              --stack-name "udapeople-backend-${CIRCLE_WORKFLOW_ID:0:7}" \
               --parameter-overrides ID="${CIRCLE_WORKFLOW_ID:0:7}"  
               
       - run:
@@ -197,8 +197,8 @@ jobs:
           command: |
             aws cloudformation deploy \
               --template-file .circleci/files/frontend.yml \
-              --tags project=project3 \
-              --stack-name "project3-frontend-${CIRCLE_WORKFLOW_ID:0:7}" \
+              --tags project=udapeople \
+              --stack-name "udapeople-frontend-${CIRCLE_WORKFLOW_ID:0:7}" \
               --parameter-overrides ID="${CIRCLE_WORKFLOW_ID:0:7}"  
             
       - run:
@@ -392,7 +392,7 @@ jobs:
               aws cloudformation deploy \
                 --template-file .circleci/files/cloudfront.yml \
                 --parameter-overrides WorkflowID="${CIRCLE_WORKFLOW_ID:0:7}" \
-                --stack-name project3-stack
+                --stack-name udapeople-stack
 
   cleanup:
       docker:
