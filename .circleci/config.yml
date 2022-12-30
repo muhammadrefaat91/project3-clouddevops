@@ -438,10 +438,12 @@ workflows:
           requires: [build-backend]
       - scan-backend:
           requires: [build-backend]
-      - scan-frontend:
-          requires: [build-frontend]
+      # - scan-frontend:
+      #     requires: [build-frontend]
       - deploy-infrastructure:
-          requires: [test-frontend, test-backend, scan-frontend, scan-backend]
+          requires: [test-frontend, test-backend,
+          #  scan-frontend,
+            scan-backend]
           filters:
             branches:
               only: [main]
@@ -464,4 +466,4 @@ workflows:
             - test-frontend
             - test-backend
             - scan-backend
-            - scan-frontend
+            # - scan-frontend
