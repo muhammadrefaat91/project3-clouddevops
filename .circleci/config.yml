@@ -221,8 +221,8 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
-      - install_ansible
       - install_awscli
+      - install_ansible
       - add_ssh_keys:
           fingerprints: ["0d:14:4b:30:37:9e:6b:91:39:8a:e8:71:fe:83:53:7b"]
       - attach_workspace:
@@ -383,7 +383,7 @@ jobs:
           command: |
               export OLD_WORKFLOW_ID=$(aws cloudformation \
               list-exports --query "Exports[?Name==\`WorkflowID\`].Value" \
-              --no-paginate --output test)
+              --no-paginate --output text)
               echo "Old Workflow ID: $OLD_WORKFLOW_ID"
               curl https://kvdb.io/${KVDB_BUCKET}/old_workflow_id -d "${OLD_WORKFLOW_ID}"
       - run:
