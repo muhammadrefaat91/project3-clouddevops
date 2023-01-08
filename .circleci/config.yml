@@ -89,7 +89,7 @@ jobs:
           command: |
             cd frontend
             rm -rf node_modules
-            npm cache clean
+            npm cache --force clean
             sudo apt-get install build-essential
             npm install
             npm run build
@@ -110,7 +110,7 @@ jobs:
           command: |
             cd backend
             rm -rf node_modules
-            npm cache clean
+            npm cache --force clean
             sudo apt-get install build-essential
             npm install
             npm run build
