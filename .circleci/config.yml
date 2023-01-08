@@ -88,6 +88,9 @@ jobs:
           name: Build front-end
           command: |
             cd frontend
+            rm -rf node_modules
+            npm cache clean
+            sudo apt-get install build-essential
             npm install
             npm run build
       - save_cache:
@@ -106,6 +109,9 @@ jobs:
           name: Back-end build
           command: |
             cd backend
+            rm -rf node_modules
+            npm cache clean
+            sudo apt-get install build-essential
             npm install
             npm run build
       - save_cache:
