@@ -1,9 +1,0 @@
-github repo url : https://github.com/muhammadrefaat91/project3-clouddevops
-
-s3 bucket endpoint: http://udapeople-add67e5.s3-website-us-east-1.amazonaws.com
-
-cloudfront distribution : https://d3oq587jarmrmr.cloudfront.net
-
-ec2 backend url: ec2-54-243-178-238.compute-1.amazonaws.com
-
-prometheus server url: ec2-44-203-162-62.compute-1.amazonaws.com	
