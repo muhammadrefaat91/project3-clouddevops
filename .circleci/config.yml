@@ -90,6 +90,7 @@ jobs:
             cd frontend
             rm -rf node_modules
             npm cache --force clean
+            rm -rf package-lock.json
             sudo apt-get install build-essential
             npm install
             npm run build
@@ -111,6 +112,7 @@ jobs:
             cd backend
             rm -rf node_modules
             npm cache --force clean
+            
             sudo apt-get install build-essential
             npm install
             npm run build
