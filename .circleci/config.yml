@@ -89,9 +89,6 @@ jobs:
           command: |
             cd frontend
             rm -rf node_modules
-            npm cache --force clean
-            rm -rf package-lock.json
-            sudo apt-get install build-essential
             npm install
             npm run build
       - save_cache:
@@ -111,9 +108,6 @@ jobs:
           command: |
             cd backend
             rm -rf node_modules
-            npm cache --force clean
-            
-            sudo apt-get install build-essential
             npm install
             npm run build
       - save_cache:
